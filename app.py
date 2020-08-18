@@ -44,13 +44,13 @@ fig
 fig_1 = px.scatter_mapbox(data_frame=death, lat='Lat', lon='Long', color='Total Deaths', hover_name='Country/Region',size = 'Total Deaths', hover_data={'Lat':False, 'Long':False}, labels = {'Country/Region':'Total Deaths'}, color_continuous_scale=px.colors.sequential.Plotly3, zoom=1.5, center=None, width=1900, height=700, mapbox_style='light', title='Global COVID-19 Death Cases')
 fig_1
 
-fig_1_bar = death.iplot(asFigure = True, kind = 'bar', orientation = 'h', barmode = 'overlay', x = 'Continent', y = 'Total Deaths', xTitle = 'Total COVID-19 Deaths', yTitle = 'Continents', title = 'Global COVID_19 Deaths', colorscale = 'piyg', theme = 'pearl', dimensions = (950,400))
+fig_1_bar = death.iplot(asFigure = True, kind = 'bar', orientation = 'h', barmode = 'overlay', legend = True, x = 'Continent', y = 'Total Deaths', xTitle = 'Total COVID-19 Deaths', yTitle = 'Continents', title = 'Global COVID_19 Deaths', colorscale = 'piyg', theme = 'pearl', dimensions = (1200,338))
 fig_1_bar
 
-pie = death.iplot(asFigure = True, kind = 'pie', labels = 'Continent', values = 'Total Deaths', theme = 'pearl', colorscale = 'rdylbu', hole = .1, pull = .02, textinfo = 'label+percent', textposition = 'inside', textcolor = 'black', legend = True, title = 'Global Deaths in all Continents', dimensions = (950,400))
+pie = death.iplot(asFigure = True, kind = 'pie', labels = 'Continent', values = 'Total Deaths', theme = 'pearl', colorscale = 'ylorbr', hole = .1, pull = .02, textinfo = 'label+percent', textposition = 'inside', textcolor = 'black', legend = True, title = 'Comparison of Death Cases in all Continents', dimensions = (950,400))
 pie
 
-fig2 = death.iplot(asFigure = True, kind = 'bar', x = 'Country/Region', y = val.all(), theme = 'pearl', colorscale = 'rdylbu', yTitle = 'COVID-19 Death Cases', title = 'Global COVID-19 Mortality Rates', dimensions = (1200,400))
+fig2 = death.iplot(asFigure = True, kind = 'bar', x = 'Country/Region', y = val.all(), theme = 'pearl', colorscale = 'rdylbu', yTitle = 'COVID-19 Death Cases', title = 'Global COVID-19 Mortality Rates', dimensions = (950,400))
 fig2
 
 
@@ -129,46 +129,13 @@ html.Div([
                           'displaylogo':False
                       })], className = 'six columns'),
         html.Div([
-            dcc.Graph(id='chart2',
-                      figure = pie,
-                      animate = True,
-                      config = {
-                          'showTips': True,
-                          'responsive': True,
-                          'displaylogo':False
-                      })], className = 'six columns')
-], className = 'row'),
-
-html.Div([
-        html.Div([
-            dcc.Graph(id='chart',
-                      figure = fig_1,
-                      animate = True,
-                      config = {
-                          'showTips': True,
-                          'responsive': True,
-                          'displaylogo':False
-                      })], className = 'auto'),
-    ], className = 'row'),
-
-html.Div([
-        html.Div([
-            dcc.Graph(id='chart3',
-                      figure = fig2,
-                      animate = True,
-                      config = {
-                          'showTips': True,
-                          'responsive': True,
-                          'displaylogo':False
-                      })], className = 'six columns'),
-        html.Div([
             dbc.Jumbotron(
     [
         dbc.Container(
             [
             html.H1("Death Cases", className="display-1"),
             html.P(
-            "776,157 COVID-19 Death Cases Globally",
+            "774,053 COVID-19 Death Cases Globally",
             className="lead",
             ),
             html.Hr(className="my-2"),
@@ -181,6 +148,42 @@ html.Div([
 )
         ], className = 'six columns')
 ], className = 'row'),
+
+dbc.Row(dbc.Col(html.Div([
+                    html.Div([
+                        dcc.Graph(id='chart',
+                            figure = fig_1,
+                            animate = True,
+                            config = {
+                                'showTips': True,
+                                'responsive': True,
+                                'displaylogo':False
+                            })], className = 'auto'),
+                    ], className = 'row'),
+)),
+
+dbc.Row([html.Div([
+            dbc.Col(html.Div([
+                        dcc.Graph(id='chart3',
+                                figure = fig2,
+                                animate = True,
+                                config = {
+                                    'showTips': True,
+                                    'responsive': True,
+                                    'displaylogo':False
+                                })]), width = 6),
+            dbc.Col(html.Div([
+                        dcc.Graph(id='chart2',
+                                figure = pie,
+                                animate = True,
+                                config = {
+                                    'showTips': True,
+                                    'responsive': True,
+                                    'displaylogo':False
+                                })]), width = 6),
+        
+            ], className = 'row'),
+        ]),
 
 
 

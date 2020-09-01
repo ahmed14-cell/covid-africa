@@ -95,7 +95,8 @@ dbc.Row(dbc.Col(html.Div([
                             config = {
                                 'showTips': True,
                                 'responsive': True,
-                                'displaylogo':False
+                                'displaylogo':False,
+                                'scrollZoom' : False
                             })], className = 'auto', style = {'color':'#ffffff','font-variant':'small-caps','font-weight':'bold'}),
                     ], className = 'row'),
 ), style={'color':'#ffffff','font-variant':'small-caps'}),

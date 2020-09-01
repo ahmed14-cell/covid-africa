@@ -1,16 +1,12 @@
 import pandas as pd 
-import numpy as np 
 import plotly.graph_objs as go 
 import cufflinks as cf 
-import dash 
 import dash_core_components as dcc 
 import dash_html_components as html 
 import dash_bootstrap_components as dbc 
 from dash.dependencies import Input, Output
 import plotly.express as px
-import dash_auth as da
 import os
-
 af = pd.read_csv('data/africa.csv')
 df = pd.read_csv('data/latest.csv')
 df = df.rename(columns = {'Country_Region':'Country', 'Long_':'Long','Case-Fatality_Ratio':'C.F.R'})
@@ -20,25 +16,18 @@ df = df[df['Country'].isin(y)]
 small = df.nsmallest(10, columns = 'Confirmed')
 large = df.nlargest(10, columns = 'C.F.R')
 color = ['#d73027','#f46d43','#fdae61','#fee090','#ffffbf','#e0f3f8','#abd9e9','#74add1','#4575b4']
-
 px.set_mapbox_access_token(os.environ.get('TOKEN'))
-
 colors = ['#d73027','#f46d43','#fdae61','#fee08b','#ffffbf','#d9ef8b','#a6d96a''#66bd63','#1a9850']
-
 fig = px.scatter_mapbox(df,lat='Lat',lon='Long',color='Confirmed',hover_name='Country',size = 'Confirmed',
                         hover_data={'Lat':False, 'Long':False}, labels = {'Country':'Confirmed'}, color_continuous_scale=color,
                         zoom=2.3, template='plotly_dark',center=None, width=1900, height=700, mapbox_style='dark',title='COVID-19 Confirmed Cases in Africa')
-
 fig1 = df.iplot(asFigure = True, kind = 'bar', barmode = 'overlay', x = 'Country', y = ['Incidence_Rate'], xTitle = 'Regions', yTitle = 'Incidence Rate',
                 colorscale = 'piyg', theme = 'solar', title = 'COVID-19 Incidence Rate in Africa', dimensions = (950,500), gridcolor = '#1a1a1a', orientation = 'v')
-
 fig2 = large.iplot(asFigure = True, kind = 'pie', labels = 'Country', values = 'C.F.R', textinfo = 'label', textposition = 'outside', textcolor = 'white',
                     gridcolor = '#1a1a1a', dimensions = (950,500), sort = True, linecolor = 'white', hole = .2, pull = .03, legend = True,colors = colors,
                     theme = 'solar',title = 'Countries with the Highest Case-Fatality Ratio')
-
 fig3 = small.iplot(asFigure = True, kind = 'barh',  x = 'Country', y = 'Confirmed', xTitle = 'Confirmed Cases', yTitle = 'Region',
                     title = 'African Countries with Low Confirmed Cases', theme = 'solar', colorscale = 'rdylgn', dimensions = (950,500), gridcolor = '#1a1a1a')
-
 fig4 = df.iplot(asFigure = True, kind = 'scatter', mode = 'lines' , x = 'Country', y = 'Active', yTitle = 'Active Cases', xTitle = 'Countries', colors = color,
                 theme = 'solar', title = 'Latest Active Cases per country', dimensions = (950,500), gridcolor = '#1a1a1a', interpolation = 'spline')
 
@@ -49,8 +38,6 @@ fig4 = df.iplot(asFigure = True, kind = 'scatter', mode = 'lines' , x = 'Country
 #    'assets/style.css']
 
 #app = dash.Dash('__name__', external_stylesheets = external_stylesheets, assets_external_path = 'https://gacaldata.000webhostapp.com/assets')
-
-
 layout = html.Div([
 dbc.Row([html.Div([
             dbc.Col(html.Div([
@@ -74,7 +61,6 @@ dbc.Row([html.Div([
         
             ], className = 'row'),
         ], style = {'color':'#ffffff','font-variant':'small-caps','font-weight':'bold'}),
-
 dbc.Row(dbc.Col(html.Div([
                     html.Div([
                         dcc.Graph(id='Chart2',
@@ -88,7 +74,6 @@ dbc.Row(dbc.Col(html.Div([
                             })], className = 'auto', style = {'color':'#ffffff','font-variant':'small-caps','font-weight':'bold'}),
                     ], className = 'row'),
 ), style={'color':'#ffffff','font-variant':'small-caps'}),
-
 dbc.Row([html.Div([
             dbc.Col(html.Div([
                         dcc.Graph(id='Chart3',
@@ -111,9 +96,5 @@ dbc.Row([html.Div([
         
             ], className = 'row'),
         ]),
-
-
-
-
 ]),
 

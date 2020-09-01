@@ -2,7 +2,6 @@ import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output, State
 import dash_bootstrap_components as dbc
-
 from app import server
 from app import app
 # import all pages in the app
@@ -13,9 +12,7 @@ from apps import confirmed, deaths, recovered, home
 ##
 # building the navigation bar
 nav_item = dbc.NavItem(dbc.NavLink("Home", href='/home'))
-
 navitem = dbc.NavItem(dbc.NavLink("What is COVID-19", href='https://africacdc.org/disease/covid-19/'))
-
 # make a dropdown for the different pages
 dropdown = dbc.DropdownMenu(
     children=[
@@ -27,7 +24,6 @@ dropdown = dbc.DropdownMenu(
     in_navbar=True,
     label="Emergency Links",
 )
-
 drop_down = dbc.DropdownMenu(
     children=[
         dbc.DropdownMenuItem("Confirmed Cases", href="/confirmed"),
@@ -40,7 +36,6 @@ drop_down = dbc.DropdownMenu(
     in_navbar = True,
     label = "Explore",
 )
-
 # Navbar Layout
 navbar = dbc.Navbar(
     dbc.Container(
@@ -70,7 +65,6 @@ navbar = dbc.Navbar(
     dark=True,
     className="mb-5",
 )
-
 def toggle_navbar_collapse(n, is_open):
     if n:
         return not is_open
@@ -82,15 +76,12 @@ for i in [2]:
         [Input(f"navbar-toggler{i}", "n_clicks")],
         [State(f"navbar-collapse{i}", "is_open")],
     )(toggle_navbar_collapse)
-
 # embedding the navigation bar
 app.layout = html.Div([
     dcc.Location(id='url', refresh=False),
     navbar,
     html.Div(id='page-content')
 ])
-
-
 @app.callback(Output('page-content', 'children'),
               [Input('url', 'pathname')])
 def display_page(pathname):

@@ -30,9 +30,6 @@ fig3 = small.iplot(asFigure = True, kind = 'barh',  x = 'Country', y = 'Confirme
                     title = 'African Countries with Low Confirmed Cases', theme = 'solar', colorscale = 'rdylgn', dimensions = (950,500), gridcolor = '#1a1a1a')
 fig4 = df.iplot(asFigure = True, kind = 'scatter', mode = 'lines' , x = 'Country', y = 'Active', yTitle = 'Active Cases', xTitle = 'Countries', colors = color,
                 theme = 'solar', title = 'Latest Active Cases per country', dimensions = (950,500), gridcolor = '#1a1a1a', interpolation = 'spline')
-
-
-
 #external_stylesheets = [
 #    dbc.themes.LUX,
 #    'assets/style.css']

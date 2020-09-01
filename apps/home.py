@@ -56,7 +56,7 @@ layout = html.Div([
                                                className="text-center"),
                                        html.P('16 840 395:\n Recovered Cases', className = 'text-center'),
                                        html.Hr(),
-                                       html.P('Last Updated:\n A few seconds ago', className = 'text-right'),
+                                       html.P('Last Updated:\n August 31, 2020', className = 'text-right'),
 
                                        ],
                              body=True, color="dark", outline=True)

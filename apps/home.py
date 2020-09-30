@@ -29,25 +29,25 @@ layout = html.Div([
         dbc.Row([
             dbc.Col(dbc.Card(children=[html.H3(children='Confirmed Cases',
                                                className="text-center"),
-                                        html.P('25 506 759:\n Confirmed Cases', className = 'text-center'),
+                                        html.P('33,652,960:\n Confirmed Cases', className = 'text-center'),
                                         html.Hr(),
-                                        html.P('Last Updated:\n August 31, 2020', className = 'text-right'),
+                                        html.P('Last Updated:\n September 30, 2020', className = 'text-right'),
                                        ],
                              body=True, color="dark", outline=True)
                     , width=4, className="mb-4"),
             dbc.Col(dbc.Card(children=[html.H3(children='Death Cases',
                                                className="text-center"),
-                                       html.P('851 095:\n Death Cases', className = 'text-center'),
+                                       html.P('1,007,922:\n Death Cases', className = 'text-center'),
                                        html.Hr(),
-                                       html.P('Last Updated:\n August 31, 2020', className = 'text-right'),
+                                       html.P('Last Updated:\n September 30, 2020', className = 'text-right'),
                                        ],
                              body=True, color="dark", outline=True)
                     , width=4, className="mb-4"),
             dbc.Col(dbc.Card(children=[html.H3(children='Recovered Cases',
                                                className="text-center"),
-                                       html.P('16 840 395:\n Recovered Cases', className = 'text-center'),
+                                       html.P('23,402,148:\n Recovered Cases', className = 'text-center'),
                                        html.Hr(),
-                                       html.P('Last Updated:\n August 31, 2020', className = 'text-right'),
+                                       html.P('Last Updated:\n September 30, 2020', className = 'text-right'),
 
                                        ],
                              body=True, color="dark", outline=True)

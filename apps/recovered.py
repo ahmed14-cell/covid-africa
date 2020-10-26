@@ -37,7 +37,7 @@ fig4 = px.bar_polar(df, r='C.F.R', color="C.F.R", theta = af.Region,template="pl
 layout = html.Div([
 dbc.Row([html.Div([
             dbc.Col(html.Div([
-                        dcc.Graph(id='Chart',
+                        dcc.Graph(id='Chart10',
                                 figure = fig3,
                                 animate = True,
                                 config = {
@@ -46,7 +46,7 @@ dbc.Row([html.Div([
                                     'displaylogo':False
                                 })], style = {'color':'#ffffff','font-variant':'small-caps','font-weight':'bold'}), width = 6),
             dbc.Col(html.Div([
-                        dcc.Graph(id='Chart1',
+                        dcc.Graph(id='Chart11',
                                 figure = fig4,
                                 animate = True,
                                 config = {
@@ -59,7 +59,7 @@ dbc.Row([html.Div([
         ]),
 dbc.Row(dbc.Col(html.Div([
                     html.Div([
-                        dcc.Graph(id='Chart2',
+                        dcc.Graph(id='Chart12',
                             figure = fig,
                             animate = True,
                             config = {
@@ -72,7 +72,7 @@ dbc.Row(dbc.Col(html.Div([
 ), style={'color':'#ffffff','font-variant':'small-caps'}),
 dbc.Row([html.Div([
             dbc.Col(html.Div([
-                        dcc.Graph(id='Chart3',
+                        dcc.Graph(id='Chart13',
                                 figure = fig1,
                                 animate = True,
                                 config = {
@@ -81,7 +81,7 @@ dbc.Row([html.Div([
                                     'displaylogo':False
                                 })], style = {'color':'#ffffff','font-variant':'small-caps','font-weight':'bold'}), width = 6),
             dbc.Col(html.Div([
-                        dcc.Graph(id='Chart4',
+                        dcc.Graph(id='Chart14',
                                 figure = fig2,
                                 animate = True,
                                 config = {

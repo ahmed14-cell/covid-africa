@@ -48,7 +48,7 @@ fig4 = df.iplot(asFigure = True, kind = 'scatter', mode = 'lines' , x = 'Country
 layout = html.Div([
 dbc.Row([html.Div([
             dbc.Col(html.Div([
-                        dcc.Graph(id='Chart',
+                        dcc.Graph(id='Chart5',
                                 figure = fig1,
                                 animate = True,
                                 config = {
@@ -57,7 +57,7 @@ dbc.Row([html.Div([
                                     'displaylogo':False
                                 })], style = {'color':'#ffffff','font-variant':'small-caps','font-weight':'bold'}), width = 6),
             dbc.Col(html.Div([
-                        dcc.Graph(id='Chart4',
+                        dcc.Graph(id='Chart6',
                                 figure = fig4,
                                 animate = True,
                                 config = {
@@ -69,7 +69,7 @@ dbc.Row([html.Div([
         ], style = {'color':'#ffffff','font-variant':'small-caps','font-weight':'bold'}),
 dbc.Row(dbc.Col(html.Div([
                     html.Div([
-                        dcc.Graph(id='Chart1',
+                        dcc.Graph(id='Chart7',
                             figure = fig,
                             animate = True,
                             config = {
@@ -82,7 +82,7 @@ dbc.Row(dbc.Col(html.Div([
 ), style={'color':'#ffffff','font-variant':'small-caps'}),
 dbc.Row([html.Div([
             dbc.Col(html.Div([
-                        dcc.Graph(id='Chart2',
+                        dcc.Graph(id='Chart8',
                                 figure = fig3,
                                 animate = True,
                                 config = {
@@ -91,7 +91,7 @@ dbc.Row([html.Div([
                                     'displaylogo':False
                                 })], style = {'color':'#ffffff','font-variant':'small-caps','font-weight':'bold'}), width = 6),
             dbc.Col(html.Div([
-                        dcc.Graph(id='Chart3',
+                        dcc.Graph(id='Chart9',
                                 figure = fig2,
                                 animate = True,
                                 config = {

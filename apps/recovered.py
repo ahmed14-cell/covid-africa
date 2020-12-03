@@ -11,7 +11,7 @@ import colorcet as cl
 px.set_mapbox_access_token(os.environ.get('TOKEN'))
 af = pd.read_csv('data/africa.csv')
 df = pd.read_csv('data/latest.csv')
-df = df.rename(columns = {'Country_Region':'Country', 'Long_':'Long','Case-Fatality_Ratio':'C.F.R'})
+df = df.rename(columns = {'Country_Region':'Country', 'Long_':'Long','Case_Fatality_Ratio':'C.F.R'})
 df = df.drop(['FIPS','Admin2','Combined_Key','Province_State'], axis = 1)
 y = list(af['Country'])
 df = df[df['Country'].isin(y)]

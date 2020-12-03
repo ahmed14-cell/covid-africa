@@ -11,7 +11,7 @@ import colorcet as cl
 px.set_mapbox_access_token(os.environ.get('TOKEN'))
 af = pd.read_csv('data/africa.csv')
 df = pd.read_csv('data/latest.csv')
-df = df.rename(columns = {'Country_Region':'Country', 'Long_':'Long','Case-Fatality_Ratio':'C.F.R'})
+df = df.rename(columns = {'Country_Region':'Country', 'Long_':'Long','Case_Fatality_Ratio':'C.F.R'})
 df = df.drop(['FIPS','Admin2','Combined_Key','Province_State'], axis = 1)
 y = list(af['Country'])
 df = df[df['Country'].isin(y)]
@@ -33,7 +33,7 @@ fig1 = go.Figure(go.Indicator(
             'borderwidth': 2,
             'bordercolor': "#1a1a1a"}))
 fig1.update_layout(paper_bgcolor = "#1a1a1a", font = {'color': "tomato", 'family': "Overpass"})
-fig2 = large.iplot(asFigure = True, kind = 'pie', labels = 'Country', values = 'Incidence_Rate', textinfo = 'label', textposition = 'outside', textcolor = 'white',
+fig2 = large.iplot(asFigure = True, kind = 'pie', labels = 'Country', values = 'Incident_Rate', textinfo = 'label', textposition = 'outside', textcolor = 'white',
                     gridcolor = '#1a1a1a', dimensions = (950,500), sort = True, linecolor = 'white', hole = .2, pull = .03, legend = True,colorscale = 'rdylgn',
                     theme = 'solar',title = 'Countries with the Highest Incidence Rate in Africa')
 fig3 = small.iplot(asFigure = True, kind = 'barh',  x = 'Country', y = 'Deaths', xTitle = 'Death Cases', yTitle = 'Region',

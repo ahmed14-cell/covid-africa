@@ -51,7 +51,7 @@ navbar = dbc.Navbar(
             dbc.NavbarToggler(id="navbar-toggler2"),
             dbc.Collapse(
                 dbc.Nav(
-                    [nav_item,navitem,drop_down,dropdown], className="ml-auto", navbar=True
+                    [nav_item,drop_down,dropdown], className="ml-auto", navbar=True
                 ),
                 id="navbar-collapse2",
                 navbar=True,

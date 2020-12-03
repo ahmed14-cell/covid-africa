@@ -1,3 +1,4 @@
+import os
 import pandas as pd 
 import plotly.graph_objs as go 
 import cufflinks as cf 
@@ -6,7 +7,7 @@ import dash_html_components as html
 import dash_bootstrap_components as dbc 
 from dash.dependencies import Input, Output
 import plotly.express as px
-import os
+
 af = pd.read_csv('data/africa.csv')
 df = pd.read_csv('data/latest.csv')
 

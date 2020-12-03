@@ -12,7 +12,6 @@ from apps import confirmed, deaths, recovered, home
 ##
 # building the navigation bar
 nav_item = dbc.NavItem(dbc.NavLink("Home", href='/home'))
-navitem = dbc.NavItem(dbc.NavLink("What is COVID-19", href='https://africacdc.org/disease/covid-19/'))
 # make a dropdown for the different pages
 dropdown = dbc.DropdownMenu(
     children=[
@@ -29,8 +28,6 @@ drop_down = dbc.DropdownMenu(
         dbc.DropdownMenuItem("Confirmed Cases", href="/confirmed"),
         dbc.DropdownMenuItem("Death Cases", href="/deaths"),
         dbc.DropdownMenuItem("Recovered Cases", href="/recovered"),
-        dbc.DropdownMenuItem("COVID-19 News", href="https://africacdc.org/covid-19-news/"),
-        dbc.DropdownMenuItem("COVID-19 Research Tracker", href="https://africacdc.org/covid-19/covid-19-research-tracker/"),
     ],
     nav = True,
     in_navbar = True,

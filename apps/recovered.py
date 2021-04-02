@@ -1,7 +1,7 @@
 import os
 import pandas as pd 
 import plotly.graph_objs as go 
-import cufflinks as cf 
+import cufflinks
 import dash_core_components as dcc 
 import dash_html_components as html 
 import dash_bootstrap_components as dbc 
@@ -15,7 +15,9 @@ af = pd.read_csv('data/africa.csv')
 df = pd.read_csv('data/latest.csv')
 
 df.rename(columns={
-    'Country_Region':'Country', 'Long_':'Long','Case_Fatality_Ratio':'C.F.R'
+    'Country_Region':'Country',
+    'Long_': 'Long',
+    'Case_Fatality_Ratio': 'C.F.R'
 }, inplace=True)
 
 df.drop([
@@ -24,6 +26,7 @@ df.drop([
 
 y = list(af['Country'])
 df = df[df['Country'].isin(y)]
+
 
 small = df.nsmallest(10, columns='Recovered')
 large = df.nlargest(10, columns='Active')
@@ -62,7 +65,7 @@ fig3 = go.Figure(go.Indicator(
         }
     }))
 fig3.update_layout(paper_bgcolor="#121212", font={
-    'color': "tomato", 'size':26,'family': "Overpass"
+    'color': "tomato", 'size':26, 'family': "Overpass"
 })
 
 fig4 = px.bar_polar(df, r='C.F.R', color="C.F.R", theta=af.Region, width=950,
@@ -80,7 +83,9 @@ dbc.Row([html.Div([
                                     'responsive': True,
                                     'displaylogo':False
                                 })], style={
-                                    'color':'#ffffff','font-variant':'small-caps','font-weight':'bold'
+                                    'color': '#ffffff',
+                                    'font-variant': 'small-caps',
+                                    'font-weight':'bold'
                                 }), width=6),
             dbc.Col(html.Div([
                         dcc.Graph(id='Chart11',
@@ -91,7 +96,9 @@ dbc.Row([html.Div([
                                     'responsive': True,
                                     'displaylogo':False
                                 })], style={
-                                    'color':'#ffffff','font-variant':'small-caps','font-weight':'bold'
+                                    'color': '#ffffff',
+                                    'font-variant': 'small-caps',
+                                    'font-weight': 'bold'
                                 }), width=6),
         
             ], className='row'),
@@ -109,7 +116,7 @@ dbc.Row(dbc.Col(html.Div([
                             })], className='auto', style={
                                 'color':'#ffffff','font-variant':'small-caps','font-weight':'bold'
                             }),
-                    ], className='row'),
+                    ], className='row'), width=12,
 ), style={'color':'#ffffff','font-variant':'small-caps'}),
 
 dbc.Row([html.Div([
@@ -122,7 +129,9 @@ dbc.Row([html.Div([
                                     'responsive': True,
                                     'displaylogo':False
                                 })], style={
-                                    'color':'#ffffff','font-variant':'small-caps','font-weight':'bold'
+                                    'color':'#ffffff',
+                                    'font-variant': 'small-caps',
+                                    'font-weight': 'bold'
                                 }), width=6),
             dbc.Col(html.Div([
                         dcc.Graph(id='Chart14',

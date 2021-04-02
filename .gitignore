@@ -128,6 +128,5 @@ dmypy.json
 # Pyre type checker
 .pyre/
 assets/font.css
-
-/.vscode
+.vscode
 .DS_Store

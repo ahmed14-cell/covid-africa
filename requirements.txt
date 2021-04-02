@@ -2,7 +2,7 @@ appnope==0.1.0
 astroid==2.4.2
 attrs==19.3.0
 backcall==0.2.0
-bleach==3.1.5
+bleach==3.3.0
 boto3==1.14.49
 botocore==1.17.49
 Brotli==1.0.7
@@ -46,7 +46,7 @@ isort==4.3.21
 itsdangerous==1.1.0
 jdcal==1.4.1
 jedi==0.17.2
-Jinja2==2.11.2
+Jinja2==2.11.3
 jmespath==0.10.0
 joblib==0.16.0
 jsonlines==1.2.0
@@ -83,7 +83,7 @@ py==1.9.0
 pycountry==20.7.3
 pycountry-convert==0.7.2
 pyct==0.4.6
-Pygments==2.6.1
+Pygments==2.7.4
 pylint==2.5.3
 pyparsing==2.4.7
 pyrsistent==0.16.0

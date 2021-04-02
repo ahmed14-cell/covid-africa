@@ -61,6 +61,7 @@ navbar = dbc.Navbar(
     color="primary",
     dark=True,
     className="mb-5",
+    expand='sm'
 )
 def toggle_navbar_collapse(n, is_open):
     if n:
